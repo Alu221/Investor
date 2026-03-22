@@ -38,9 +38,47 @@
 ### 4. Динамика
 Если данные за несколько периодов — покажи динамику (рост/падение в %).
 
-### 5. Вывод
+### 5. Скоринговые модели (рассчитай если есть данные)
+
+**F-Score Пиотроски (9 баллов):**
+Используй текущие данные и `prev_year` из @knowledge/companies_data.json:
+```
+Прибыльность (4 балла):
+1. ROA > 0? → net_income / total_assets > 0
+2. OCF > 0? → ocf > 0
+3. ΔROA > 0? → текущий ROA > prev_year ROA (= prev_year.net_income / prev_year.total_assets)
+4. OCF > NI? → ocf > net_income
+
+Леверидж (3 балла):
+5. ΔDebt/Assets < 0? → текущий net_debt/total_assets < prev_year.debt_to_assets
+6. ΔCurrent Ratio > 0? → текущий current_ratio > (приблизительно из prev_year)
+7. Нет допэмиссии? → shares_count не вырос (допускаем ДА если нет данных)
+
+Эффективность (2 балла):
+8. ΔGross Margin > 0? → текущий ebitda_margin > prev_year.gross_margin
+9. ΔAsset Turnover > 0? → revenue/total_assets > prev_year.revenue/prev_year.total_assets
+```
+
+**Z-Score Альтмана:**
+```
+Z = 1.2×(working_capital/total_assets) + 1.4×(net_income/total_assets)
+    + 3.3×(ebit/total_assets) + 0.6×(mcap/(total_assets-equity))
+    + 1.0×(revenue/total_assets)
+```
+
+**Sharpe Ratio портфеля:**
+```
+Sharpe = (Rp - Rf) / σp
+Rp = ожидаемая доходность портфеля (div_yield + eps_growth_yoy)
+Rf = 15% (ОФЗ 10 лет)
+σp = средневзвешенная sigma_12m из JSON (с учётом корреляций из correlation_matrix.md)
+```
+
+### 6. Вывод
 - Сильные стороны отчета
 - Слабые стороны / тревожные сигналы
+- F-Score: X из 9 (интерпретация)
+- Z-Score: X (зона)
 - Сравнение с отраслевыми аналогами (из базы данных)
 
 ### 6. Дисклеймер
