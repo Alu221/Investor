@@ -1,0 +1,17 @@
+{
+  "name": "investbot",
+  "version": "1.0.0",
+  "description": "Инвестиционный аналитик-брокер для российского рынка MOEX",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "telegraf": "^4.16.3",
+    "dotenv": "^16.4.7",
+    "duck-duck-scrape": "^2.2.5",
+    "node-fetch": "^2.7.0"
+  }
+}
