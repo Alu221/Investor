@@ -10,25 +10,44 @@ logger = logging.getLogger(__name__)
 
 
 def _read_fresh_token() -> str | None:
-    try:
-        path = pathlib.Path.home() / ".claude" / ".credentials.json"
-        with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        return data.get("claudeAiOauth", {}).get("accessToken")
-    except Exception:
-        return None
+    """Читает свежий OAuth токен из credentials Claude Code CLI."""
+    home = pathlib.Path.home()
+    paths_and_keys = [
+        (home / ".claude" / ".credentials.json", ("claudeAiOauth", "accessToken")),
+        (home / ".claude" / "credentials.json", ("claudeAiOauth", "accessToken")),
+        (home / ".claude.json", ("oauthToken",)),
+    ]
+    for path, keys in paths_and_keys:
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            val = data
+            for k in keys:
+                val = val.get(k, {}) if isinstance(val, dict) else None
+                if val is None:
+                    break
+            if val and isinstance(val, str) and val.startswith("sk-ant-"):
+                return val
+        except Exception:
+            continue
+    return None
 
 
 class LLMService:
     def __init__(self, oauth_token: str, project_dir: str,
-                 model: str = "sonnet", max_turns: int = 5):
+                 model: str = "sonnet", max_turns: int = 25):
         self.fallback_token = oauth_token
         self.project_dir = project_dir
         self.model = model
         self.max_turns = max_turns
 
     def _get_token(self) -> str:
-        return _read_fresh_token() or self.fallback_token
+        fresh = _read_fresh_token()
+        if fresh:
+            logger.info(f"Token: fresh from credentials (..{fresh[-8:]})")
+            return fresh
+        logger.info(f"Token: fallback from .env (..{self.fallback_token[-8:]})")
+        return self.fallback_token
 
     async def chat(self, user_message: str, session_id: str | None = None,
                    append_prompt: str = "") -> dict:
@@ -63,7 +82,9 @@ class LLMService:
             "--verbose",
             "--max-turns", str(self.max_turns),
             "--model", self.model,
+            "--permission-mode", "acceptEdits",
             "--allowedTools", "Bash,WebSearch,WebFetch,Read,Glob,Grep",
+            "--disallowedTools", "Bash(rm -rf *),Bash(sudo *)",
             "--append-system-prompt", full_append,
         ]
         if session_id:
@@ -83,7 +104,7 @@ class LLMService:
             tools_used = []
 
             # Python 3.10 compatible — no asyncio.timeout
-            deadline = asyncio.get_event_loop().time() + 180
+            deadline = asyncio.get_event_loop().time() + 1800  # 30 мин
             try:
                 while True:
                     remaining = deadline - asyncio.get_event_loop().time()
@@ -122,7 +143,7 @@ class LLMService:
                         continue
 
             except asyncio.TimeoutError:
-                logger.error("Timeout 180s")
+                logger.error("Timeout 1800s")
                 try:
                     process.kill()
                 except Exception:
