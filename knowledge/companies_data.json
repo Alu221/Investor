@@ -1,13 +1,13 @@
 {
   "description": "Фундаментальные данные ~50 компаний РФ (MOEX). ВСЕ компании из Сортировки 2026. Данные в млн руб., цены и дивиденды в руб./акцию.",
-  "last_updated": "2026-03-22",
+  "last_updated": "2026-03-24",
   "companies": [
     {
       "name": "АЛРОСА",
       "sector": "Цветная металлургия",
       "shares_count": 7364965630,
-      "price": 37.75,
-      "mcap": 278027,
+      "price": 37.08,
+      "mcap": 273093,
       "net_debt": -5552,
       "ev": 530544,
       "equity": 378896,
@@ -55,14 +55,16 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 373344,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": 25654,
+      "owner_earnings": 123518
     },
     {
       "name": "ГМК Норникель",
       "sector": "Цветная металлургия",
       "shares_count": 15286339700,
-      "price": 152.54,
-      "mcap": 2331778,
+      "price": 146,
+      "mcap": 2231806,
       "net_debt": 743639,
       "ev": 3197402,
       "equity": 649137,
@@ -110,14 +112,16 @@
         "debt_to_assets": 0.526
       },
       "invested_capital": 1392776,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": 53823,
+      "owner_earnings": 160665
     },
     {
       "name": "Русал",
       "sector": "Цветная металлургия",
       "shares_count": 15193014862,
-      "price": 42.005,
-      "mcap": 638183,
+      "price": 40.28,
+      "mcap": 611975,
       "net_debt": 566010,
       "ev": 1099437,
       "equity": 1014930,
@@ -165,14 +169,16 @@
         "debt_to_assets": 0.261
       },
       "invested_capital": 1580940,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": null,
+      "owner_earnings": null
     },
     {
       "name": "ММК",
       "sector": "Черная металлургия",
       "shares_count": 11174330000,
-      "price": 28.74,
-      "mcap": 321150,
+      "price": 27.37,
+      "mcap": 305841,
       "net_debt": -86144,
       "ev": 553531,
       "equity": 595420,
@@ -220,14 +226,16 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 509276,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": 26420,
+      "owner_earnings": 113804
     },
     {
       "name": "НЛМК",
       "sector": "Черная металлургия",
       "shares_count": 5993227240,
-      "price": 101.6,
-      "mcap": 608912,
+      "price": 98.64,
+      "mcap": 591172,
       "net_debt": -22885,
       "ev": 1154425,
       "equity": 739101,
@@ -264,7 +272,7 @@
       "beta": 1.3,
       "dividend_ex_month": "июнь, октябрь",
       "lot_size": 10,
-      "lot_cost": 1016.0,
+      "lot_cost": 1016,
       "prev_year": {
         "revenue": 936443,
         "net_income": 169911,
@@ -275,14 +283,16 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 716216,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": 58222,
+      "owner_earnings": 206793
     },
     {
       "name": "Северсталь",
       "sector": "Черная металлургия",
       "shares_count": 837718660,
-      "price": 906.4,
-      "mcap": 759308,
+      "price": 871.2,
+      "mcap": 729820,
       "net_debt": -153402,
       "ev": 1171869,
       "equity": 523534,
@@ -330,14 +340,16 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 370132,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": 35539,
+      "owner_earnings": 224762
     },
     {
       "name": "ТМК",
       "sector": "Черная металлургия",
       "shares_count": 1033135366,
-      "price": 100.7,
-      "mcap": 104037,
+      "price": 99.72,
+      "mcap": 103024,
       "net_debt": 254847,
       "ev": 487034,
       "equity": 89646,
@@ -374,7 +386,7 @@
       "beta": 1.3,
       "dividend_ex_month": "июль",
       "lot_size": 100,
-      "lot_cost": 10070.0,
+      "lot_cost": 10070,
       "prev_year": {
         "revenue": 497959,
         "net_income": 50566,
@@ -385,14 +397,16 @@
         "debt_to_assets": 1.431
       },
       "invested_capital": 344493,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": 20962,
+      "owner_earnings": 65019
     },
     {
       "name": "Полюс золото",
       "sector": "Золотодобыча",
       "shares_count": 677120000,
-      "price": 2296,
-      "mcap": 1554668,
+      "price": 2270.6,
+      "mcap": 1537469,
       "net_debt": 119700,
       "ev": 1609770,
       "equity": 413949,
@@ -440,14 +454,16 @@
         "debt_to_assets": 0.126
       },
       "invested_capital": 533649,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": 32550,
+      "owner_earnings": 66020
     },
     {
       "name": "Фосагро",
       "sector": "Удобрения",
       "shares_count": 129500000,
-      "price": 7697,
-      "mcap": 996762,
+      "price": 7550,
+      "mcap": 977725,
       "net_debt": 227501,
       "ev": 1109655,
       "equity": 159960,
@@ -495,14 +511,16 @@
         "debt_to_assets": 0.437
       },
       "invested_capital": 387461,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 31431,
+      "owner_earnings": 88560
     },
     {
       "name": "Газпром",
       "sector": "Нефтегаз",
       "shares_count": 23673512900,
-      "price": 131.89,
-      "mcap": 3122300,
+      "price": 135.7,
+      "mcap": 3212496,
       "net_debt": 5566890,
       "ev": 9494326,
       "equity": 16901575,
@@ -550,14 +568,16 @@
         "debt_to_assets": 0.175
       },
       "invested_capital": 22468465,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 330000,
+      "owner_earnings": null
     },
     {
       "name": "Новатэк",
       "sector": "Нефтегаз",
       "shares_count": 3036306000,
-      "price": 1404,
-      "mcap": 4262974,
+      "price": 1395,
+      "mcap": 4235647,
       "net_debt": -10997,
       "ev": 4412901,
       "equity": 2406646,
@@ -605,14 +625,16 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 2395649,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 120000,
+      "owner_earnings": 488900
     },
     {
       "name": "Роснефть",
       "sector": "Нефтегаз",
       "shares_count": 10598177817,
-      "price": 512.9,
-      "mcap": 5435805,
+      "price": 502.1,
+      "mcap": 5321345,
       "net_debt": 2700000,
       "ev": 8793422,
       "equity": 8512100,
@@ -660,14 +682,16 @@
         "debt_to_assets": 0.169
       },
       "invested_capital": 11212100,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 463650,
+      "owner_earnings": 1258460
     },
     {
       "name": "Газпромнефть",
       "sector": "Нефтегаз",
       "shares_count": 4741299639,
-      "price": 556.95,
-      "mcap": 2640667,
+      "price": 542.8,
+      "mcap": 2573577,
       "net_debt": 456445,
       "ev": 4458102,
       "equity": 3051870,
@@ -715,14 +739,16 @@
         "debt_to_assets": 0.085
       },
       "invested_capital": 3508315,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 150000,
+      "owner_earnings": 672000
     },
     {
       "name": "Башнефть",
       "sector": "Нефтегаз",
       "shares_count": 202241285,
-      "price": 1672.5,
-      "mcap": 338249,
+      "price": 1628,
+      "mcap": 329249,
       "net_debt": 61339,
       "ev": 468261,
       "equity": 804665,
@@ -770,14 +796,16 @@
         "debt_to_assets": 0.048
       },
       "invested_capital": 866004,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 23951,
+      "owner_earnings": 212110
     },
     {
       "name": "ЛУКОЙЛ",
       "sector": "Нефтегаз",
       "shares_count": 692336000,
-      "price": 5807,
-      "mcap": 4020395,
+      "price": 5709.5,
+      "mcap": 3952892,
       "net_debt": -632162,
       "ev": 4099955,
       "equity": 6038586,
@@ -825,14 +853,16 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 5406424,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 261161,
+      "owner_earnings": 1235286
     },
     {
       "name": "Сургутнефтегаз",
       "sector": "Нефтегаз",
       "shares_count": 35725994956,
-      "price": 22.75,
-      "mcap": 812766,
+      "price": 22.3,
+      "mcap": 796690,
       "net_debt": -4500000,
       "ev": null,
       "equity": 6607001,
@@ -867,7 +897,7 @@
       "beta": 0.5,
       "dividend_ex_month": "июль",
       "lot_size": 100,
-      "lot_cost": 2275.0,
+      "lot_cost": 2275,
       "prev_year": {
         "revenue": 1788823,
         "net_income": 2560000,
@@ -878,7 +908,9 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 2107001,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 86392,
+      "owner_earnings": 1314557
     },
     {
       "name": "Татнефть",
@@ -933,14 +965,16 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 1088767,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 60000,
+      "owner_earnings": 317000
     },
     {
       "name": "ВК",
       "sector": "Интернет",
       "shares_count": 226130707,
-      "price": 289.95,
-      "mcap": 65567,
+      "price": 287.55,
+      "mcap": 65024,
       "net_debt": 91546,
       "ev": 263044,
       "equity": 158855,
@@ -988,14 +1022,16 @@
         "debt_to_assets": 0.212
       },
       "invested_capital": 250401,
-      "sigma_12m": 0.45
+      "sigma_12m": 0.45,
+      "depreciation": 2567,
+      "owner_earnings": null
     },
     {
       "name": "Яндекс",
       "sector": "Интернет",
       "shares_count": 370834420,
-      "price": 4418.5,
-      "mcap": 1638532,
+      "price": 4277.5,
+      "mcap": 1586244,
       "net_debt": 65928,
       "ev": 1064956,
       "equity": 301988,
@@ -1043,14 +1079,16 @@
         "debt_to_assets": 0.086
       },
       "invested_capital": 367916,
-      "sigma_12m": 0.45
+      "sigma_12m": 0.45,
+      "depreciation": 18992,
+      "owner_earnings": 42749
     },
     {
       "name": "БСП",
       "sector": "Банки",
       "shares_count": 481549783,
-      "price": 339.52,
-      "mcap": 163496,
+      "price": 338.44,
+      "mcap": 162976,
       "net_debt": null,
       "ev": null,
       "equity": 170960,
@@ -1094,14 +1132,16 @@
         "debt_to_assets": 0.9
       },
       "invested_capital": null,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": null,
+      "owner_earnings": null
     },
     {
       "name": "Сбер",
       "sector": "Банки",
       "shares_count": 22586948000,
-      "price": 320.16,
-      "mcap": 7231437,
+      "price": 317.38,
+      "mcap": 7168646,
       "net_debt": null,
       "ev": null,
       "equity": 6009351,
@@ -1145,14 +1185,16 @@
         "debt_to_assets": 0.9
       },
       "invested_capital": null,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": null,
+      "owner_earnings": null
     },
     {
       "name": "ВТБ",
       "sector": "Банки",
       "shares_count": 5369933893,
-      "price": 85.905,
-      "mcap": 461304,
+      "price": 85.01,
+      "mcap": 456498,
       "net_debt": null,
       "ev": null,
       "equity": 1780020,
@@ -1196,14 +1238,16 @@
         "debt_to_assets": 0.917
       },
       "invested_capital": null,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": null,
+      "owner_earnings": null
     },
     {
       "name": "Совкомбанк",
       "sector": "Банки",
       "shares_count": 19693945875,
-      "price": 13.135,
-      "mcap": 258680,
+      "price": 12.815,
+      "mcap": 252378,
       "net_debt": null,
       "ev": null,
       "equity": 269000,
@@ -1247,7 +1291,9 @@
         "debt_to_assets": 0.9
       },
       "invested_capital": null,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": null,
+      "owner_earnings": null
     },
     {
       "name": "Тинькофф",
@@ -1298,14 +1344,16 @@
         "debt_to_assets": 0.889
       },
       "invested_capital": null,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": null,
+      "owner_earnings": null
     },
     {
       "name": "Х5",
       "sector": "Ритейл",
       "shares_count": 271554784,
-      "price": 2458.5,
-      "mcap": 667617,
+      "price": 2413,
+      "mcap": 655262,
       "net_debt": 732657,
       "ev": 1332522,
       "equity": 193805,
@@ -1354,14 +1402,16 @@
         "debt_to_assets": 0.766
       },
       "invested_capital": 926462,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 48417,
+      "owner_earnings": 83044
     },
     {
       "name": "Магнит",
       "sector": "Ритейл",
       "shares_count": 101911355,
-      "price": 3207,
-      "mcap": 326830,
+      "price": 3196.5,
+      "mcap": 325760,
       "net_debt": 574377,
       "ev": 1282100,
       "equity": 240397,
@@ -1410,14 +1460,16 @@
         "debt_to_assets": 0.488
       },
       "invested_capital": 814774,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 27924,
+      "owner_earnings": 50015
     },
     {
       "name": "НоваБев",
       "sector": "Ритейл",
       "shares_count": 205400000,
-      "price": 436.2,
-      "mcap": 89595,
+      "price": 413.2,
+      "mcap": 84871,
       "net_debt": 36441,
       "ev": 126311,
       "equity": 23664,
@@ -1466,14 +1518,16 @@
         "debt_to_assets": 0.318
       },
       "invested_capital": 60105,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 2662,
+      "owner_earnings": 10290
     },
     {
       "name": "Ростелеком",
       "sector": "Связь",
       "shares_count": 3367328000,
-      "price": 58.61,
-      "mcap": 197359,
+      "price": 58.16,
+      "mcap": 195844,
       "net_debt": 497170,
       "ev": 759228,
       "equity": 292468,
@@ -1521,14 +1575,16 @@
         "debt_to_assets": 0.52
       },
       "invested_capital": 789638,
-      "sigma_12m": 0.25
+      "sigma_12m": 0.25,
+      "depreciation": 40883,
+      "owner_earnings": 72027
     },
     {
       "name": "МТС",
       "sector": "Связь",
       "shares_count": 1998381575,
-      "price": 227.45,
-      "mcap": 454532,
+      "price": 225.2,
+      "mcap": 450036,
       "net_debt": 431071,
       "ev": 956346,
       "equity": -11702,
@@ -1574,14 +1630,16 @@
         "debt_to_assets": null
       },
       "invested_capital": 419369,
-      "sigma_12m": 0.25
+      "sigma_12m": 0.25,
+      "depreciation": 35671,
+      "owner_earnings": 59156
     },
     {
       "name": "Мосбиржа",
       "sector": "Банки",
       "shares_count": 2276401458,
-      "price": 175.05,
-      "mcap": 398484,
+      "price": 174.09,
+      "mcap": 396299,
       "net_debt": null,
       "ev": null,
       "equity": 185000,
@@ -1625,14 +1683,16 @@
         "debt_to_assets": 0.833
       },
       "invested_capital": null,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": null,
+      "owner_earnings": null
     },
     {
       "name": "Позитив",
       "sector": "IT/Кибербез",
       "shares_count": 66200000,
-      "price": 1109.8,
-      "mcap": 73469,
+      "price": 1086.4,
+      "mcap": 71920,
       "net_debt": -8000,
       "ev": 172064,
       "equity": 26000,
@@ -1680,14 +1740,16 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 18000,
-      "sigma_12m": 0.45
+      "sigma_12m": 0.45,
+      "depreciation": 1260,
+      "owner_earnings": 7704
     },
     {
       "name": "Астра",
       "sector": "IT/ОС",
       "shares_count": 210000000,
-      "price": 252.25,
-      "mcap": 52973,
+      "price": 250.35,
+      "mcap": 52574,
       "net_debt": -5000,
       "ev": 75010,
       "equity": 12000,
@@ -1735,14 +1797,16 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 7000,
-      "sigma_12m": 0.45
+      "sigma_12m": 0.45,
+      "depreciation": 525,
+      "owner_earnings": 2910
     },
     {
       "name": "OZON",
       "sector": "E-commerce",
       "shares_count": 216000000,
-      "price": 4507.5,
-      "mcap": 973620,
+      "price": 4440,
+      "mcap": 959040,
       "net_debt": 40000,
       "ev": 640048,
       "equity": 45000,
@@ -1790,14 +1854,16 @@
         "debt_to_assets": 0.143
       },
       "invested_capital": 85000,
-      "sigma_12m": 0.45
+      "sigma_12m": 0.45,
+      "depreciation": 12600,
+      "owner_earnings": null
     },
     {
       "name": "HeadHunter",
       "sector": "IT/HR",
       "shares_count": 50000000,
-      "price": 3012,
-      "mcap": 150600,
+      "price": 2983,
+      "mcap": 149150,
       "net_debt": -15000,
       "ev": 185000,
       "equity": 28000,
@@ -1845,14 +1911,16 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 13000,
-      "sigma_12m": 0.45
+      "sigma_12m": 0.45,
+      "depreciation": 2775,
+      "owner_earnings": 14610
     },
     {
       "name": "ПИК",
       "sector": "Девелоперы",
       "shares_count": 660497344,
-      "price": 474.1,
-      "mcap": 313142,
+      "price": 480.1,
+      "mcap": 317105,
       "net_debt": 350000,
       "ev": 649866,
       "equity": 220000,
@@ -1900,14 +1968,16 @@
         "debt_to_assets": 0.408
       },
       "invested_capital": 570000,
-      "sigma_12m": 0.5
+      "sigma_12m": 0.5,
+      "depreciation": 9750,
+      "owner_earnings": 58900
     },
     {
       "name": "Самолёт",
       "sector": "Девелоперы",
       "shares_count": 60000000,
-      "price": 794,
-      "mcap": 47640,
+      "price": 727.8,
+      "mcap": 43668,
       "net_debt": 280000,
       "ev": 359980,
       "equity": 65000,
@@ -1955,14 +2025,16 @@
         "debt_to_assets": 1.087
       },
       "invested_capital": 345000,
-      "sigma_12m": 0.5
+      "sigma_12m": 0.5,
+      "depreciation": 5700,
+      "owner_earnings": 27280
     },
     {
       "name": "Аэрофлот",
       "sector": "Авиа",
       "shares_count": 2444900000,
-      "price": 50.08,
-      "mcap": 122441,
+      "price": 49.69,
+      "mcap": 121487,
       "net_debt": 320000,
       "ev": 470117,
       "equity": 40000,
@@ -2010,14 +2082,16 @@
         "debt_to_assets": 0.65
       },
       "invested_capital": 360000,
-      "sigma_12m": 0.45
+      "sigma_12m": 0.45,
+      "depreciation": 66500,
+      "owner_earnings": null
     },
     {
       "name": "Камаз",
       "sector": "Машиностроение",
       "shares_count": 707073000,
-      "price": 81.8,
-      "mcap": 57839,
+      "price": 81.7,
+      "mcap": 57768,
       "net_debt": 65000,
       "ev": 164980,
       "equity": 80000,
@@ -2054,7 +2128,7 @@
       "beta": 1,
       "dividend_ex_month": "июль",
       "lot_size": 10,
-      "lot_cost": 818.0,
+      "lot_cost": 818,
       "prev_year": {
         "revenue": 276786,
         "net_income": 11364,
@@ -2065,14 +2139,16 @@
         "debt_to_assets": 0.335
       },
       "invested_capital": 145000,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": 4200,
+      "owner_earnings": 14180
     },
     {
       "name": "Лента",
       "sector": "Ритейл",
       "shares_count": 980613000,
-      "price": 2243,
-      "mcap": 2199515,
+      "price": 2121.5,
+      "mcap": 2080370,
       "net_debt": 85000,
       "ev": 205027,
       "equity": 95000,
@@ -2120,14 +2196,16 @@
         "debt_to_assets": 0.189
       },
       "invested_capital": 180000,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 9120,
+      "owner_earnings": 18648
     },
     {
       "name": "Сегежа",
       "sector": "Лесопром",
       "shares_count": 15917000000,
-      "price": 1.2165,
-      "mcap": 19363,
+      "price": 1.189,
+      "mcap": 18925,
       "net_debt": 140000,
       "ev": 170003,
       "equity": 15000,
@@ -2175,14 +2253,16 @@
         "debt_to_assets": 0.943
       },
       "invested_capital": 155000,
-      "sigma_12m": 0.5
+      "sigma_12m": 0.5,
+      "depreciation": 8400,
+      "owner_earnings": null
     },
     {
       "name": "Мечел",
       "sector": "Черная металлургия",
       "shares_count": 416270746,
-      "price": 72.1,
-      "mcap": 30013,
+      "price": 68.11,
+      "mcap": 28352,
       "net_debt": 260000,
       "ev": 309994,
       "equity": 25000,
@@ -2230,7 +2310,9 @@
         "debt_to_assets": 0.694
       },
       "invested_capital": 285000,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": 7800,
+      "owner_earnings": 28120
     },
     {
       "name": "Русагро",
@@ -2285,14 +2367,16 @@
         "debt_to_assets": 0.166
       },
       "invested_capital": 175000,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 6750,
+      "owner_earnings": 32700
     },
     {
       "name": "Whoosh",
       "sector": "Транспорт/Шеринг",
       "shares_count": 222000000,
-      "price": 94.98,
-      "mcap": 21086,
+      "price": 94.16,
+      "mcap": 20904,
       "net_debt": 5000,
       "ev": 34970,
       "equity": 7500,
@@ -2340,14 +2424,16 @@
         "debt_to_assets": 0.243
       },
       "invested_capital": 12500,
-      "sigma_12m": 0.4
+      "sigma_12m": 0.4,
+      "depreciation": 480,
+      "owner_earnings": 2192
     },
     {
       "name": "Интер РАО",
       "sector": "Электроэнергетика",
       "shares_count": 104400000000,
-      "price": 3.2305,
-      "mcap": 337264,
+      "price": 3.198,
+      "mcap": 333871,
       "net_debt": -350000,
       "ev": 158,
       "equity": 700000,
@@ -2395,7 +2481,9 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 350000,
-      "sigma_12m": 0.2
+      "sigma_12m": 0.2,
+      "depreciation": 24000,
+      "owner_earnings": 124600
     },
     {
       "name": "ДОМ.РФ",
@@ -2450,14 +2538,16 @@
         "debt_to_assets": 0.045
       },
       "invested_capital": null,
-      "sigma_12m": 0.35
+      "sigma_12m": 0.35,
+      "depreciation": 13000,
+      "owner_earnings": 57200
     },
     {
       "name": "Мать и Дитя",
       "sector": "Здравоохранение",
       "shares_count": 67500000,
-      "price": 1388,
-      "mcap": 93690,
+      "price": 1390.5,
+      "mcap": 93859,
       "net_debt": -8000,
       "ev": 49375,
       "equity": 28000,
@@ -2505,14 +2595,16 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 20000,
-      "sigma_12m": 0.3
+      "sigma_12m": 0.3,
+      "depreciation": 1300,
+      "owner_earnings": 6020
     },
     {
       "name": "Транснефть",
       "sector": "Нефтегаз/Инфраструктура",
       "shares_count": 1554875,
-      "price": 1406,
-      "mcap": 2186,
+      "price": 1410,
+      "mcap": 2192,
       "net_debt": 120000,
       "ev": 2220000,
       "equity": 4500000,
@@ -2560,7 +2652,9 @@
         "debt_to_assets": 0.026
       },
       "invested_capital": 4620000,
-      "sigma_12m": 0.25
+      "sigma_12m": 0.25,
+      "depreciation": 80000,
+      "owner_earnings": 342000
     },
     {
       "name": "Россети",
@@ -2604,7 +2698,7 @@
       "beta": 0.45,
       "dividend_ex_month": null,
       "lot_size": 1000,
-      "lot_cost": 82.0,
+      "lot_cost": 82,
       "prev_year": {
         "revenue": 1090909,
         "net_income": 136364,
@@ -2615,14 +2709,16 @@
         "debt_to_assets": 0.117
       },
       "invested_capital": 2150000,
-      "sigma_12m": 0.2
+      "sigma_12m": 0.2,
+      "depreciation": 130000,
+      "owner_earnings": 202000
     },
     {
       "name": "АФК Система",
       "sector": "Холдинг",
       "shares_count": 9650000000,
-      "price": 13.075,
-      "mcap": 126174,
+      "price": 12.689,
+      "mcap": 122449,
       "net_debt": 250000,
       "ev": 389925,
       "equity": 50000,
@@ -2670,7 +2766,9 @@
         "debt_to_assets": 0.099
       },
       "invested_capital": 300000,
-      "sigma_12m": 0.4
+      "sigma_12m": 0.4,
+      "depreciation": 150000,
+      "owner_earnings": 70000
     },
     {
       "name": "ЦИАН",
@@ -2725,7 +2823,9 @@
         "debt_to_assets": 0.01
       },
       "invested_capital": 10000,
-      "sigma_12m": 0.45
+      "sigma_12m": 0.45,
+      "depreciation": 700,
+      "owner_earnings": 2280
     }
   ]
 }
