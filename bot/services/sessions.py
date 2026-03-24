@@ -109,6 +109,15 @@ class SessionManager:
 
         return sessions
 
+    def delete_session(self, user_id: int, topic: str) -> bool:
+        """Удалить сохранённую сессию по теме."""
+        user = self._get_user(user_id)
+        if topic in user.saved_sessions:
+            del user.saved_sessions[topic]
+            logger.info(f"User {user_id}: deleted session '{topic}'")
+            return True
+        return False
+
     def clear_all(self, user_id: int):
         """Очистить все сессии пользователя."""
         self._users[user_id] = UserData()

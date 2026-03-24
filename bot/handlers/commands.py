@@ -311,9 +311,10 @@ async def cmd_sessions(message: Message, **kwargs):
         marker = "▶️" if s["active"] else "💾"
         label = f"{marker} {s['topic'][:30]} ({s['messages']})"
         if not s["active"]:
-            buttons.append([InlineKeyboardButton(
-                text=label, callback_data=f"session:switch:{s['topic'][:30]}"
-            )])
+            buttons.append([
+                InlineKeyboardButton(text=label, callback_data=f"session:switch:{s['topic'][:30]}"),
+                InlineKeyboardButton(text="🗑", callback_data=f"session:del:{s['topic'][:30]}"),
+            ])
         else:
             buttons.append([InlineKeyboardButton(text=label, callback_data="session:current")])
 
@@ -355,6 +356,18 @@ async def cb_clear_yes(callback: CallbackQuery, **kwargs):
     if memory:
         await memory.clear_history(callback.message.chat.id)
     await callback.message.edit_text("🗑 Очищено.")
+    await callback.answer()
+
+
+@router.callback_query(F.data.startswith("session:del:"))
+async def cb_del_session(callback: CallbackQuery, **kwargs):
+    topic = callback.data.replace("session:del:", "")
+    user_id = callback.from_user.id
+    from handlers.chat import sessions
+    if sessions.delete_session(user_id, topic):
+        await callback.message.answer(f"🗑 Тема «{topic}» удалена.", parse_mode=None)
+    else:
+        await callback.message.answer(f"Тема «{topic}» не найдена.", parse_mode=None)
     await callback.answer()
 
 
