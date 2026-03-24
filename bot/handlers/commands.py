@@ -399,6 +399,100 @@ async def cb_clearall_no(callback: CallbackQuery, **kwargs):
     await callback.answer()
 
 
+# ─── Вотчлист ───
+
+@router.message(Command("watch"))
+async def cmd_watch(message: Message, **kwargs):
+    from services.watchlist import WatchlistService
+    wl: WatchlistService = kwargs.get("watchlist")
+    if not wl:
+        await message.answer("Вотчлист недоступен.", parse_mode=None)
+        return
+
+    args = (message.text or "").split()
+    if len(args) < 2:
+        await message.answer(
+            "Укажи тикер: /watch SBER\n"
+            "Несколько: /watch SBER LKOH TATN",
+            parse_mode=None,
+        )
+        return
+
+    user_id = message.from_user.id
+    added = []
+    already = []
+    for ticker in args[1:]:
+        if wl.add(user_id, ticker):
+            added.append(ticker.upper())
+        else:
+            already.append(ticker.upper())
+
+    parts = []
+    if added:
+        parts.append(f"✅ Добавлено: {', '.join(added)}")
+    if already:
+        parts.append(f"Уже в списке: {', '.join(already)}")
+
+    current = wl.get(user_id)
+    parts.append(f"\nВотчлист ({len(current)}): {', '.join(current)}")
+    parts.append("Утренний отчёт в 10:00 МСК")
+    await message.answer("\n".join(parts), parse_mode=None)
+
+
+@router.message(Command("unwatch"))
+async def cmd_unwatch(message: Message, **kwargs):
+    from services.watchlist import WatchlistService
+    wl: WatchlistService = kwargs.get("watchlist")
+    if not wl:
+        return
+
+    args = (message.text or "").split()
+    if len(args) < 2:
+        await message.answer("Укажи тикер: /unwatch SBER", parse_mode=None)
+        return
+
+    user_id = message.from_user.id
+    removed = []
+    for ticker in args[1:]:
+        if wl.remove(user_id, ticker):
+            removed.append(ticker.upper())
+
+    if removed:
+        current = wl.get(user_id)
+        text = f"🗑 Убрано: {', '.join(removed)}"
+        if current:
+            text += f"\nОсталось: {', '.join(current)}"
+        else:
+            text += "\nВотчлист пуст"
+        await message.answer(text, parse_mode=None)
+    else:
+        await message.answer("Тикер не найден в вотчлисте.", parse_mode=None)
+
+
+@router.message(Command("watchlist"))
+async def cmd_watchlist(message: Message, **kwargs):
+    from services.watchlist import WatchlistService
+    wl: WatchlistService = kwargs.get("watchlist")
+    if not wl:
+        return
+
+    user_id = message.from_user.id
+    tickers = wl.get(user_id)
+    if not tickers:
+        await message.answer(
+            "Вотчлист пуст.\nДобавь: /watch SBER LKOH TATN",
+            parse_mode=None,
+        )
+        return
+
+    await message.answer(
+        f"📋 Вотчлист ({len(tickers)}):\n{', '.join(tickers)}\n\n"
+        f"Утренний отчёт в 10:00 МСК\n"
+        f"Убрать: /unwatch ТИКЕР",
+        parse_mode=None,
+    )
+
+
 @router.callback_query(F.data == "clear:no")
 async def cb_clear_no(callback: CallbackQuery, **kwargs):
     await callback.message.edit_text("Отменено.")

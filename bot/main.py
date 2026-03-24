@@ -15,6 +15,8 @@ from middlewares.whitelist import WhitelistMiddleware
 from middlewares.rate_limit import RateLimitMiddleware
 from handlers import commands, chat
 from services.memory import MemoryService
+from services.watchlist import WatchlistService
+from services.morning_report import scheduler as morning_scheduler
 
 # Логирование
 _BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -47,6 +49,10 @@ async def main():
     memory = MemoryService(max_messages=settings.max_history_messages)
     dp.workflow_data["memory"] = memory
 
+    # Вотчлист
+    watchlist = WatchlistService()
+    dp.workflow_data["watchlist"] = watchlist
+
     # Whitelist (первый — блокирует чужих до всего остального)
     if settings.allowed_ids_list:
         dp.message.middleware(WhitelistMiddleware(settings.allowed_ids_list))
@@ -69,16 +75,24 @@ async def main():
         BotCommand(command="skills", description="🧠 Навыки бота"),
         BotCommand(command="sessions", description="📂 Мои темы"),
         BotCommand(command="new", description="🆕 Новая тема"),
+        BotCommand(command="watch", description="👁 Добавить в вотчлист"),
+        BotCommand(command="watchlist", description="📋 Мой вотчлист"),
         BotCommand(command="help", description="📖 Справка"),
         BotCommand(command="clear", description="🗑 Очистить всё"),
     ])
 
     logger.info(f"ИНвестбот запущен | модель={settings.claude_model} | dir={settings.project_dir}")
 
+    # Утренний отчёт (10:00 МСК = 07:00 UTC)
+    from handlers.chat import llm
+    report_task = asyncio.create_task(morning_scheduler(bot, llm, watchlist, hour=7, minute=0))
+    logger.info("Morning report scheduler started (10:00 MSK)")
+
     try:
         await dp.start_polling(bot, allowed_updates=["message", "callback_query"],
                                drop_pending_updates=True)
     finally:
+        report_task.cancel()
         await bot.session.close()
 
 
