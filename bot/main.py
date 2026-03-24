@@ -77,16 +77,17 @@ async def main():
         BotCommand(command="new", description="🆕 Новая тема"),
         BotCommand(command="watch", description="👁 Добавить в вотчлист"),
         BotCommand(command="watchlist", description="📋 Мой вотчлист"),
+        BotCommand(command="report", description="⚙️ Утренний отчёт"),
         BotCommand(command="help", description="📖 Справка"),
         BotCommand(command="clear", description="🗑 Очистить всё"),
     ])
 
     logger.info(f"ИНвестбот запущен | модель={settings.claude_model} | dir={settings.project_dir}")
 
-    # Утренний отчёт (10:00 МСК = 07:00 UTC)
+    # Утренний отчёт (по настройкам каждого пользователя)
     from handlers.chat import llm
-    report_task = asyncio.create_task(morning_scheduler(bot, llm, watchlist, hour=7, minute=0))
-    logger.info("Morning report scheduler started (10:00 MSK)")
+    report_task = asyncio.create_task(morning_scheduler(bot, llm, watchlist))
+    logger.info("Morning report scheduler started")
 
     try:
         await dp.start_polling(bot, allowed_updates=["message", "callback_query"],

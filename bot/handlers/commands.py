@@ -485,12 +485,95 @@ async def cmd_watchlist(message: Message, **kwargs):
         )
         return
 
+    settings = wl.get_settings(user_id)
+    report_status = "включён" if settings["report_enabled"] else "выключен"
+    report_time = f"{settings['report_hour_msk']}:00 МСК"
+    report_detail = "подробный" if settings["report_detail"] == "full" else "краткий"
+
     await message.answer(
         f"📋 Вотчлист ({len(tickers)}):\n{', '.join(tickers)}\n\n"
-        f"Утренний отчёт в 10:00 МСК\n"
-        f"Убрать: /unwatch ТИКЕР",
+        f"Утренний отчёт: {report_status}\n"
+        f"Время: {report_time}\n"
+        f"Формат: {report_detail}\n\n"
+        f"Убрать: /unwatch ТИКЕР\n"
+        f"Настройки: /report",
         parse_mode=None,
     )
+
+
+@router.message(Command("report"))
+async def cmd_report(message: Message, **kwargs):
+    from services.watchlist import WatchlistService
+    wl: WatchlistService = kwargs.get("watchlist")
+    if not wl:
+        return
+
+    user_id = message.from_user.id
+    args = (message.text or "").split()
+
+    # /report — без аргументов, показать настройки
+    if len(args) == 1:
+        settings = wl.get_settings(user_id)
+        tickers = wl.get(user_id)
+        status = "✅ Включён" if settings["report_enabled"] else "❌ Выключен"
+        detail = "📝 Подробный (цены + новости + анализ)" if settings["report_detail"] == "full" else "📊 Краткий (только цены)"
+
+        await message.answer(
+            f"⚙️ Настройки утреннего отчёта\n\n"
+            f"Статус: {status}\n"
+            f"Время: {settings['report_hour_msk']}:00 МСК\n"
+            f"Формат: {detail}\n"
+            f"Акции: {', '.join(tickers) if tickers else 'пусто'}\n\n"
+            f"Команды:\n"
+            f"/report on — включить отчёт\n"
+            f"/report off — выключить\n"
+            f"/report time 9 — изменить время (час МСК)\n"
+            f"/report brief — краткий формат (только цены)\n"
+            f"/report full — подробный (цены + новости)\n"
+            f"/watch SBER LKOH — добавить акции",
+            parse_mode=None,
+        )
+        return
+
+    action = args[1].lower()
+
+    if action == "on":
+        tickers = wl.get(user_id)
+        if not tickers:
+            await message.answer("Сначала добавь акции: /watch SBER LKOH TATN", parse_mode=None)
+            return
+        wl.set_setting(user_id, "report_enabled", True)
+        h = wl.get_settings(user_id)["report_hour_msk"]
+        await message.answer(f"✅ Утренний отчёт включён! Каждый день в {h}:00 МСК.", parse_mode=None)
+
+    elif action == "off":
+        wl.set_setting(user_id, "report_enabled", False)
+        await message.answer("❌ Утренний отчёт выключен.", parse_mode=None)
+
+    elif action == "time" and len(args) >= 3:
+        try:
+            hour = int(args[2])
+            if 0 <= hour <= 23:
+                wl.set_setting(user_id, "report_hour_msk", hour)
+                await message.answer(f"⏰ Время отчёта: {hour}:00 МСК", parse_mode=None)
+            else:
+                await message.answer("Час от 0 до 23.", parse_mode=None)
+        except ValueError:
+            await message.answer("Укажи час числом: /report time 9", parse_mode=None)
+
+    elif action == "brief":
+        wl.set_setting(user_id, "report_detail", "brief")
+        await message.answer("📊 Формат: краткий (только цены и изменения)", parse_mode=None)
+
+    elif action == "full":
+        wl.set_setting(user_id, "report_detail", "full")
+        await message.answer("📝 Формат: подробный (цены + новости + дивиденды)", parse_mode=None)
+
+    else:
+        await message.answer(
+            "Команды:\n/report on | off | time ЧАС | brief | full",
+            parse_mode=None,
+        )
 
 
 @router.callback_query(F.data == "clear:no")
