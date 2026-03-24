@@ -121,7 +121,9 @@ PIKK=ПИК, SMLT=Самолёт, MOEX=Мосбиржа, SVCB=Совкомбан
 BSPB=БСП, RUAL=Русал, TRMK=ТМК, POSI=Позитив, ASTR=Астра, HHRU=HeadHunter,
 AFKS=АФК Система, SGZH=Сегежа, MTLR=Мечел, AGRO=Русагро, WUSH=Whoosh,
 IRAO=Интер РАО, FEES=Россети, TRNFP=Транснефть, CIAN=ЦИАН, VKCO=ВК,
-LNTA=Лента, BELU=НоваБев, KMAZ=Камаз
+LNTA=Лента, BELU=НоваБев, KMAZ=Камаз, MDMG=Мать и Дитя, DOMRF=ДОМ.РФ,
+SBERP=Сбер-преф, SNGSP=Сургутнефтегаз-преф, TATNP=Татнефть-преф,
+BANEP=Башнефть-преф, MTLRP=Мечел-преф
 
 ### Обработка ошибок MCP
 - MCP вернул ошибку → fallback на companies_data.json + предупредить: "Данные из базы на {last_updated}"
