@@ -214,7 +214,7 @@ class LLMService:
             "--max-turns", str(self.max_turns),
             "--model", self.model,
             "--permission-mode", "acceptEdits",
-            "--allowedTools", "Bash,WebSearch,WebFetch,Read,Glob,Grep",
+            "--allowedTools", "Bash,WebSearch,WebFetch,Read,Glob,Grep,mcp__moex-fundamentals__get_price,mcp__moex-fundamentals__get_fundamentals,mcp__moex-fundamentals__get_dividends,mcp__moex-fundamentals__get_return_12m",
             "--disallowedTools", "Bash(rm -rf *),Bash(sudo *)",
             "--append-system-prompt", full_append,
         ]
