@@ -11,6 +11,9 @@ class Settings(BaseSettings):
     # Claude Code OAuth token (от подписки Claude Max)
     claude_api_key: str  # CLAUDE_API_KEY в .env → передаётся как CLAUDE_CODE_OAUTH_TOKEN
 
+    # Anthropic API key (fallback когда OAuth протух)
+    anthropic_api_key: str = ""  # ANTHROPIC_API_KEY в .env
+
     # Модель
     claude_model: str = "sonnet"
 
@@ -19,6 +22,7 @@ class Settings(BaseSettings):
 
     # Security
     allowed_user_ids: str = ""
+    admin_user_id: str = ""  # ID админа для уведомлений о протухшем токене
     rate_limit_messages: int = 15
     rate_limit_window: int = 300
 
