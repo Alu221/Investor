@@ -6,7 +6,16 @@
       "mcp__excel__excel_describe_sheets",
       "mcp__excel__excel_read_sheet",
       "mcp__filesystem__read_text_file",
-      "mcp__excel__excel_write_to_sheet"
+      "mcp__excel__excel_write_to_sheet",
+      "mcp__playwright__browser_run_code"
     ]
+  },
+  "mcpServers": {
+    "desktop-control": {
+      "command": "python",
+      "args": [
+        "e:/mon-ptogekt/mcp/computer-use/server.py"
+      ]
+    }
   }
 }
